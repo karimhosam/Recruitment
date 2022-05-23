@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+
+<table class="table table-primary">
+    <thead>
+    <tr>
+        <th scope="col"> Student Name </th>
+        <th scope="col"> Student Age </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${students.empty}">
+        <td colspan="2"> No Students Available </td>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.name}" />
+        <td th:text="${student.age}"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
